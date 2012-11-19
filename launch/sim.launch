@@ -1,0 +1,13 @@
+<launch>
+    <!-- Start Stage -->
+    <node pkg="stage" type="stageros" name="stage"  
+        args="$(find ros_intro)/world/simple_map.world"/>
+
+
+    <!-- Start Joystick-->
+    <node pkg="joystick" type="joynode" name="joystick"/>
+
+    <!-- Start Joystick converter-->
+    <node pkg="joystick_interface" type="joystick_interface" name="joystick_interface"/>
+	
+</launch>
