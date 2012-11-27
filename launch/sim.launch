@@ -9,5 +9,8 @@
 
     <!-- Start Joystick converter-->
     <node pkg="joystick_interface" type="joystick_interface" name="joystick_interface"/>
+
+    <!-- Start Haptic test-->
+    <node pkg="haptic_test" type="haptic_test" name="haptic_test"/>
 	
 </launch>
