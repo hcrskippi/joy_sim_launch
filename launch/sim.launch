@@ -3,14 +3,12 @@
     <node pkg="stage" type="stageros" name="stage"  
         args="$(find ros_intro)/world/simple_map.world"/>
 
-
     <!-- Start Joystick-->
     <node pkg="joystick" type="joynode" name="joystick"/>
 
     <!-- Start Joystick converter-->
     <node pkg="joystick_interface" type="joystick_interface" name="joystick_interface"/>
 
-    <!-- Start Haptic test-->
-    <node pkg="haptic_test" type="haptic_test" name="haptic_test"/>
-	
+    <!-- Start Haptic Interface-->
+    <node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
 </launch>
