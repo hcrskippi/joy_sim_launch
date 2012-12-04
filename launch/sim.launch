@@ -1,7 +1,7 @@
 <launch>
     <!-- Start Stage -->
-    <!--<node pkg="stage" type="stageros" name="stage"  
-        args="$(find ros_intro)/world/simple_map.world"/>-->
+    <node pkg="stage" type="stageros" name="stage"  
+        args="$(find ros_intro)/world/simple_map.world"/>
 
     <!-- Start Joystick-->
     <node pkg="joystick" type="joynode" name="joystick"/>
@@ -11,17 +11,5 @@
 
     <!-- Start Haptic Interface-->
     <node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
-    
-    <!-- Start Laser tester-->
-    <node pkg="laser_tester" type="laser_tester" name="laser_tester"/>
-
-    <!--Set hokuyo node parameters-->
-    <node name="$(anon dynparam)" pkg="dynamic_reconfigure" type="dynparam" args="set_from_parameters hokuyo_node">
-     <param name="min_ang" type="double" value="0.0" />
-     <param name="max_ang" type="double" value="1.4" />
-    </node>
-
-    <!-- Start Hokuyo node-->
-    <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node"/>
  
 </launch>
