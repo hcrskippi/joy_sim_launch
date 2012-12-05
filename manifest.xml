@@ -7,6 +7,8 @@
   <author>Farhan</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
+  <depend pkg="rospy"/>
+  <depend pkg="roscpp"/>
   <url>http://ros.org/wiki/joy_sim_launch</url>
 </package>
 

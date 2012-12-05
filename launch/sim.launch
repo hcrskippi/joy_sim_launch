@@ -10,6 +10,6 @@
     <node pkg="joystick_interface" type="joystick_interface" name="joystick_interface"/>
 
     <!-- Start Haptic Interface-->
-    <node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
+    <!--<node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>-->
  
 </launch>
