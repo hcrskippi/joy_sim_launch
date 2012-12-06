@@ -8,19 +8,36 @@
     	<!-- Start Haptic Interface-->
     	<node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
 
+        <!-- Start laser combiner -->
+        <node pkg="laser_combiner" name="laser_combiner" type="laser_combiner"/>
+
 	<!-- Start left listener -->
-	<node pkg="laser_listener" name="left_listener" type="listener.py" args="left_listener kerbDetectLeft step_detect_left"/>
+	<node pkg="laser_listener" name="left_listener" type="left_listener.py"/>
 
 	<!-- Start right listener -->
-	<node pkg="laser_listener" name="right_listener" type="listener.py" args="right_listener kerbDetectRight step_detect_right"/>
+	<node pkg="laser_listener" name="right_listener" type="right_listener.py" />
 
+	<!-- Start laser combiner -->
+	<!--<node pkg="laser_combiner" name="laser_combiner" type="laser_combiner"/>
+-->
 	<!-- Start left hokuyo -->
-	<!--<node pkg="hokuyo_node" name="hokuyo_node4" type="hokuyo_node">
+	<node pkg="hokuyo_node" name="hokuyo_node4" type="hokuyo_node">
 		<param name="port" value="/dev/hokuyo_H1009011" />
 
 		<param name="intensity" value="off" />
 		<param name="min_ang" value="0.0" />
 		<param name="max_ang" value="1.4" />
 		<param name="frame_id" value="kerbDetectLeft" />
-	</node>-->
+	</node>
+
+        <!-- Start right hokuyo -->
+        <node pkg="hokuyo_node" name="hokuyo_node5" type="hokuyo_node">
+                <param name="port" value="/dev/hokuyo_H0905374" />
+
+                <param name="intensity" value="off" />
+                <param name="min_ang" value="0.0" />
+                <param name="max_ang" value="1.4" />
+                <param name="frame_id" value="kerbDetectRight" />
+        </node>
+
 </launch>
