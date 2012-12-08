@@ -7,7 +7,8 @@
 
     	<!-- Start Haptic Interface-->
     	<node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
-
+	<!-- Start Sonar Listener -->
+	<node pkg="sonar_listener" type="listener.py" name="sonar_listener" />
         <!-- Start laser combiner -->
         <node pkg="laser_combiner" name="laser_combiner" type="laser_combiner"/>
 
@@ -22,8 +23,7 @@
 -->
 	<!-- Start left hokuyo -->
 	<node pkg="hokuyo_node" name="hokuyo_node4" type="hokuyo_node">
-		<param name="port" value="/dev/hokuyo_H1009011" />
-
+		<param name="port" value="/dev/hokuyo_H0905374"/>
 		<param name="intensity" value="off" />
 		<param name="min_ang" value="0.0" />
 		<param name="max_ang" value="1.4" />
@@ -32,12 +32,11 @@
 
         <!-- Start right hokuyo -->
         <node pkg="hokuyo_node" name="hokuyo_node5" type="hokuyo_node">
-                <param name="port" value="/dev/hokuyo_H0905374" />
-
+               	<param name="port" value="/dev/hokuyo_H1009011"/>
                 <param name="intensity" value="off" />
                 <param name="min_ang" value="0.0" />
                 <param name="max_ang" value="1.4" />
                 <param name="frame_id" value="kerbDetectRight" />
         </node>
-
+	<node pkg="sonar_override" type="sonar_override.py" name="sonar_override"/>
 </launch>
