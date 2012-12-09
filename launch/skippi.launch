@@ -1,4 +1,10 @@
 <launch>
+	<!-- Configuration setup for skippi-->
+ 	<node pkg="dynamic_reconfigure" name="dynparam" type="dynparam" args="load tfBroadcaster $(find skippi_setup_tf)/yaml/arty_future_tf" />   	
+
+	<!-- Start skippi-->
+	<node pkg="skippi" name="skippi" type="skippi" cwd="node" required="true"/>
+
     	<!-- Start Joystick-->
     	<node pkg="joystick" type="joynode" name="joystick"/>
 
