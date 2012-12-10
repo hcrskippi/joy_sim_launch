@@ -1,4 +1,10 @@
 <launch>
+	<!-- Configuration setup for skippi-->
+ 	<node pkg="dynamic_reconfigure" name="dynparam" type="dynparam" args="load tfBroadcaster $(find skippi_setup_tf)/yaml/arty_future_tf" />   	
+
+	<!-- Start skippi-->
+	<node pkg="skippi" name="skippi" type="skippi" cwd="node" required="true"/>	
+
     	<!-- Start Joystick-->
     	<node pkg="joystick" type="joynode" name="joystick"/>
 
@@ -9,6 +15,10 @@
     	<node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
 	<!-- Start Sonar Listener -->
 	<node pkg="sonar_listener" type="listener.py" name="sonar_listener" />
+
+	<!-- Launch rosserial-->
+	<node pkg="rosserial_python" type="serial_node.py" name="arduino" args="/dev/arduino_752303138333516052A1"/>
+
         <!-- Start laser combiner -->
         <node pkg="laser_combiner" name="laser_combiner" type="laser_combiner"/>
 

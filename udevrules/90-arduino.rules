@@ -1,0 +1,2 @@
+KERNEL=="ttyACM*", SUBSYSTEM=="tty", ATTRS{product}=="Arduino Uno", MODE="777", SYMLINK+="arduino_$attr{serial}"
+
