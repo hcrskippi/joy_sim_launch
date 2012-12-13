@@ -8,19 +8,19 @@
     	<!-- Start Joystick-->
     	<node pkg="joystick" type="joynode" name="joystick"/>
 
-	<node pkg="rosbag" type="record" name="joystick_log" args="/joystick -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/skippi_launch/joystick/joystick"/>
-	
-	<node pkg="rosbag" type="record" name="cmd_vel_log" args="/cmd_vel -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/skippi_launch/cmd_vel/cmd_vel"/>
-    	
-	<node pkg="rosbag" type="record" name="haptic_log" args="/haptic_polar -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/skippi_launch/haptic/haptic"/>
+<node pkg="rosbag" type="record" name="joystick_log" args="/joystick -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/shake_enabled_launch/joystick/joystick"/>
 
-	<node pkg="rosbag" type="record" name="gps_log" args="/GPSDistance -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/skippi_launch/gps/gps"/>
-	
-	<!-- Start Joystick converter-->
+<node pkg="rosbag" type="record" name="cmd_vel_log" args="/cmd_vel -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/shake_enabled_launch/cmd_vel/cmd_vel"/>
+
+<node pkg="rosbag" type="record" name="haptic_log" args="/haptic_polar -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/shake_enabled_launch/haptic/haptic"/>
+
+<!--<node pkg="rosbag" type="record" name="gps_log" args="/GPSDistance -o /home/haroldsoh/ros_workspace/hcrskippi/joy_sim_launch/logs/shake_enabled_launch/gps/gps"/>-->
+
+    	<!-- Start Joystick converter-->
     	<node pkg="joystick_interface" type="joystick_interface" name="joystick_interface"/>
 
     	<!-- Start Haptic Interface-->
-    	<node pkg="haptic_interface" type="haptic_interface" name="haptic_interface"/>
+    	<node pkg="haptic_interface" type="haptic_interface_shake_enabled" name="haptic_interface"/>
 	<!-- Start Sonar Listener -->
 	<node pkg="sonar_listener" type="listener.py" name="sonar_listener" />
 
@@ -57,5 +57,4 @@
                 <param name="frame_id" value="kerbDetectRight" />
         </node>
 	<node pkg="sonar_override" type="sonar_override.py" name="sonar_override"/>
-
 </launch>
